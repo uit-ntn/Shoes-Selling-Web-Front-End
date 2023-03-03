@@ -1,66 +1,115 @@
-import Button from 'react-bootstrap/Button';
-import {Container, Row, Col} from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import images from '../../assets/images'
+import Form from '../Form'
+import styles from './Header.module.scss'
 
-function Home() {
-  return (
-    <Navbar bg="light" expand="lg">
-      <Container fluid>
-        <Row className='flex-nowrap w-100'>
-          <Col xxl={3}>
-            <Navbar.Brand href="#" xxl = {3}>
-              <Row>
-                <Col>
-                  <img src="" alt="" srcset=""/>
-                </Col>
-                <Col></Col>
+import {Container, Row, Col} from 'react-bootstrap'
+import Stack from 'react-bootstrap/Stack';
+import classNames from 'classnames/bind';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faAngleDown, faBell, faCartShopping, faCheckCircle, faHouse, faShoePrints, faX, faXRay} from '@fortawesome/free-solid-svg-icons';
+import {useEffect, useState} from 'react';
 
-              </Row>
-            </Navbar.Brand>
 
-          </Col>
-          <Col xxl={9}>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-              <Nav
-                className="me-auto my-2 my-lg-0 "
-                style={{ maxHeight: '100px' }}
-                navbarScroll
-              >
-                <Nav.Link href="#action1" xxxl={2}>Home</Nav.Link>
-                <Nav.Link href="#action2">Link</Nav.Link>
-                <NavDropdown title="Link" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
-                  </NavDropdown.Item>
-                </NavDropdown>
-                <Nav.Link href="#" disabled>
-                  Link
-                </Nav.Link>
-              </Nav>
-              <Form className="d-flex">
-                <Form.Control
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form>
-            </Navbar.Collapse>
-          </Col>
-        </Row>
-      </Container>
-    </Navbar>
-  );
+let login = ""
+const cx = classNames.bind(styles)
+
+function Header() {
+  const [check, setCheck] = useState(false)
+  console.log(check);
+
+
+  return(
+    <Container fluid="xxl" className={cx('wrapper')} >
+      <Row className={cx('header')}>
+        {/* Logo */}
+        <Col xxl={2} className={cx('logo')}>
+          <div className={cx('logo__images')}>
+            <FontAwesomeIcon icon={faShoePrints}
+              style={{
+                padding: '10px',
+                borderRadius: '50%',
+                backgroundColor: '#51d6ed',
+                color: 'white'
+              }}
+            />
+          </div>
+          <div className={cx("logo__title")}>
+            <div style={{fontSize: '20px', fontWeight: '500'}}>SHOE SELLING</div>
+            <div style={{fontStyle: 'italic', fontSize: '10px', }}>-SINCE 2023-</div>
+          </div>
+        </Col>
+
+        {/* Search */}
+        <Col xxl={6}>
+          <Row className={cx("search")}>
+            <Col>
+              <div>
+                <FontAwesomeIcon icon={faHouse} style={{marginRight:'6px'}}/>
+                Home
+              </div>
+            </Col>
+            <Col>
+              <div>
+                <FontAwesomeIcon icon={faCheckCircle} style={{marginRight: '6px'}}/>
+                Purcharsed
+              </div>
+            </Col>
+            <Col>
+              <div>
+                More
+                <FontAwesomeIcon icon={faAngleDown} style={{marginLeft: '6px'}}/>
+              </div>
+            </Col>
+          </Row>
+
+        </Col>
+
+        {/* Login */}
+        <Col xxl={4} className={cx("login")}>
+          <div className={cx("login__item")}>
+            <FontAwesomeIcon icon={faCartShopping} className={cx("login__item_notify")}/>
+          </div>
+          <div className={cx("login__item")}>
+            <FontAwesomeIcon icon={faBell} className={cx("login__item_notify")}/>
+          </div>
+          <div className={cx("login__item")}>
+            <button className={cx("login__item_lg")}
+              onClick={() => {
+                login = "login"
+                setCheck(!check)
+              }}
+            >
+              <div className={cx("login__item_btn")}>
+                Login
+              </div>
+            </button>
+          </div>
+          <div className={cx("login__item")}>
+            <button className={cx("login__item_su")}
+              onClick={()=>{
+                login = "sign up"
+                setCheck(!check)
+              }}
+            >
+              <div>
+                Sign Up
+              </div>
+            </button>
+          </div>
+        </Col>
+      </Row>
+      {check && 
+          <div>
+            <FontAwesomeIcon icon={faX}
+              onClick={()=> setCheck(!check)}
+              style={{position: 'absolute', zIndex: '2', top: '210px', right: '980px'}}
+            />
+            <Form check={login}/>
+          </div>
+      }
+
+    </Container>
+  )
 }
 
-export default Home;
+export default Header;
