@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route}  from 'react-router-dom'; 
+import {BrowserRouter as Router, Routes, Route}  from 'reactnp-router-dom'; 
 import ThemeProvider from 'react-bootstrap/ThemeProvider'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home'
@@ -21,5 +21,6 @@ function App() {
       </Router>
   );
 }
+
 
 export default App;
