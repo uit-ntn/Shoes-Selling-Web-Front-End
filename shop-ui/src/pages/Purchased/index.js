@@ -1,6 +1,26 @@
+import {Container, Col, Row } from 'react-bootstrap';
+import Header from '../../components/Header'
+import Detail from '../../components/details'
+import classNames from 'classnames';
+
+
+const cx=classNames.bind()
 function Purchased() {
   return(
-  <h2>Purchased pages</h2>
+    <div>
+      <Header/>
+      <Container fluid={"xxl"} className={cx("wrapper")}>
+        <Row >
+          <Detail/>
+        </Row>
+        <Row>
+
+        </Row>
+
+      </Container>
+      
+
+    </div>
   )  
 }
 

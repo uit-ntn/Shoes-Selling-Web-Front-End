@@ -102,7 +102,7 @@ function Header() {
           <div>
             <FontAwesomeIcon icon={faX}
               onClick={()=> setCheck(!check)}
-              style={{position: 'absolute', zIndex: '2', top: '210px', right: '980px'}}
+              style={{position: 'absolute', zIndex: '11', top: '210px', right: '650px'}}
             />
             <Form check={login}/>
           </div>
