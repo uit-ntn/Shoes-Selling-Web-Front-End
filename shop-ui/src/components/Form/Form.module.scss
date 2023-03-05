@@ -6,6 +6,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 10;
 }
 
 
@@ -53,6 +54,26 @@
   font-size: 24px;
   text-align:justify;
 
+}
+
+.form__content-box{
+  margin: 0 80px;
+  margin-top: 20px;
+}
+.form__content-box-title{
+  display: inline-flex; 
+  justify-content: start;
+
+
+  font-size: 24px;
+  font-weight: 700;
+}
+.form__content-box-input{
+  padding: 5px 0;
+  height: 50px;
+
+  border: 3px solid #d1f3f9 ;
+  border-radius: 6px;
 }
 
 

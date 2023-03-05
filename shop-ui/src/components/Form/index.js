@@ -1,8 +1,8 @@
-import {faShoePrints, faX} from '@fortawesome/free-solid-svg-icons';
+import {faShoePrints} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import {useEffect, useState} from 'react';
-import {Container, Row, Col, Stack} from 'react-bootstrap';
+// import {useEffect, useState} from 'react';
+import {Container, Row, Col} from 'react-bootstrap';
 import styles from './Form.module.scss'
 
 
@@ -46,6 +46,43 @@ function Form(props) {
 
             {/* content */}
             <div className={cx("form__content")}>
+
+              {(props.check==="login")&&
+                <div className={cx("form__content-login")}>
+                  <div className={cx("form__name")}>CREATE AN ACCOUNT</div>
+
+                  <div className={cx("form__content-box")}>
+                    <Row>
+                      <div className={cx("form__content-box-title")}>Your Name</div>
+                    </Row>
+                    <Row>
+                      <input type="text" className={cx("form__content-box-input")} placeholder="First Name"/>
+                    </Row>
+                    <Row>
+                      <input type="text" className={cx("form__content-box-input")} placeholder="Last Name"/>
+                    </Row>
+                  </div>
+
+                  <div className={cx("form__content-box")}>
+                    <Row>
+                      <div className={cx("form__content-box-title")}>EMAIL</div>
+                    </Row>
+                    <Row>
+                      <input type="text" className={cx("form__content-box-input")} placeholder="example@gmail.com"/>
+                    </Row>
+                  </div>
+
+                  <div className={cx("form__content-box")}>
+                    <Row>
+                      <div className={cx("form__content-box-title")}>PASSWORD</div>
+                    </Row>
+                    <Row>
+                      <input type="password" className={cx("form__content-box-input")}/>
+                    </Row>
+                  </div>
+                </div> }
+
+
               {(props.check==="login")&&
                 <div className={cx("form__content-login")}>
                   <div className={cx("form__name")}>CREATE AN ACCOUNT</div>
@@ -66,6 +103,20 @@ function Form(props) {
                 <div>
                   <div className={cx("form__name")}>YOUR ACCOUNT</div>
                   <div className={cx("form__content-box")}>
+                    <Row>
+                      <div className={cx("form__content-box-title")}>EMAIL</div>
+                    </Row>
+                    <Row>
+                      <input type="text" className={cx("form__content-box-input")} placeholder="example@gmail.com"/>
+                    </Row>
+                  </div>
+                  <div className={cx("form__content-box")}>
+                    <Row>
+                      <div className={cx("form__content-box-title")}>PASSWORD</div>
+                    </Row>
+                    <Row>
+                      <input type="password" className={cx("form__content-box-input")}/>
+                    </Row>
                     <div>EMAIL</div>
                     <input type="text"/>
                   </div>

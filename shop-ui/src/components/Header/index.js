@@ -45,13 +45,18 @@ function Header() {
             <Col>
               <div>
                 <FontAwesomeIcon icon={faHouse} style={{marginRight:'6px'}}/>
-                Home
+                <a href="http://localhost:3000/" style={{color:"black", textDecoration:"none"}}>
+                  Home
+
+                </a>
               </div>
             </Col>
             <Col>
               <div>
                 <FontAwesomeIcon icon={faCheckCircle} style={{marginRight: '6px'}}/>
-                Purcharsed
+                <a href="http://localhost:3000/purchased" style={{color:"black", textDecoration:"none"}}>
+                  Purcharsed
+                </a>
               </div>
             </Col>
             <Col>
@@ -102,7 +107,7 @@ function Header() {
           <div>
             <FontAwesomeIcon icon={faX}
               onClick={()=> setCheck(!check)}
-              style={{position: 'absolute', zIndex: '2', top: '210px', right: '980px'}}
+              style={{position: 'absolute', zIndex: '11', top: '210px', right: '650px'}}
             />
             <Form check={login}/>
           </div>
