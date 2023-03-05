@@ -1,9 +1,3 @@
-import {Container, Col, Row } from 'react-bootstrap';
-import Header from '../../components/Header'
-import Detail from '../../components/details'
-import classNames from 'classnames';
-import Footer from '../../components/Footer';
-
 
 const cx=classNames.bind()
 function Purchased() {
@@ -23,5 +17,12 @@ function Purchased() {
     </div>
   )  
 }
+main
+
+  return (
+    <div>
+      <PurchasedProductsList purchasedProducts={purchasedProducts} />
+    </div>
+  );
 
 export default Purchased;
