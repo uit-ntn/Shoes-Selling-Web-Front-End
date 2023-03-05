@@ -1,16 +1,35 @@
-import React from 'react';
-import PurchasedProductsList from  '.products-list';
+
+import {Container, Col, Row } from 'react-bootstrap';
+import Header from '../../components/Header'
+import Detail from '../../components/details'
+import classNames from 'classnames';
+import Footer from '../../components/Footer';
+
+
+const cx=classNames.bind()
 function Purchased() {
-  const purchasedProducts = [
-    { name: 'Product 1', price: 10 },
-    { name: 'Product 2', price: 20 },
-    { name: 'Product 3', price: 30 },
-  ];
+  return(
+    <div>
+      <Header/>
+      <Container fluid={"xxl"} className={cx("wrapper")}>
+        <Row >
+          <Detail/>
+        </Row>
+        <Row>
+          <Footer/>
+        </Row>
+      </Container>
+      
+
+    </div>
+  )  
+}
+main
 
   return (
     <div>
       <PurchasedProductsList purchasedProducts={purchasedProducts} />
     </div>
   );
-  }
+
 export default Purchased;
