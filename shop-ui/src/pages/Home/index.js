@@ -1,26 +1,35 @@
 import Header from '../../components/Header'
-import Product from '../Product';
 import React, { Component } from 'react';
 import Footer from '../../components/Footer/Footer';
 import React from 'react';
-import Product from './Product';
+import Product from '../../components/Product'
+import ProductList from '../../components/productList';
+import Slidebar from '../../components/Slidebar';
+
+const ListComponent = () => {
+  const products = [
+    {
+      name: 'Nike',
+      price: '1000000',
+      image: '',
+    },
+    {
+      name: 'Adidas',
+      price: '2000000',
+      image: '',
+    },
+    
+  ];
+
+  return <ProductList products={products} />; //tạo danh sách các sản phẩm hiển thị dưới dạng lưới
+};
 
 const Home = () => {
   return (
-    <div>
-    <Header />
-      <Product
-        name="Adidas"
-        image=""
-        price="2000"
-      />
-      <Product
-        name="Nike"
-        image=""
-        price="2000"
-      />
-      <Footer/>
-    </div>
+   
+      <Header />
+
+
   );
 };
 

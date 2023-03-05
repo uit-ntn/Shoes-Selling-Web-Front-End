@@ -1,17 +1,22 @@
 import React from 'react';
-import Product from '../../pages/Product';
+import './ProductList.css';
+import Product from './Product';
 
 const ProductList = (props) => {
-  const products = props.products.map((product) => (
-    <Product
-      key={product.id}
-      name={product.name}
-      image={product.image}
-      price={product.price}
-    />
-  ));
+  const { products } = props;
 
-  return <div>{products}</div>;
+  return (
+    <div className="ProductList">
+      {products.map((product, index) => (
+        <Product
+          key={index}
+          name={product.name}
+          price={product.price}
+          image={product.image}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default ProductList;
