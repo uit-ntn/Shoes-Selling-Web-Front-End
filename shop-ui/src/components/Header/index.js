@@ -45,13 +45,18 @@ function Header() {
             <Col>
               <div>
                 <FontAwesomeIcon icon={faHouse} style={{marginRight:'6px'}}/>
-                Home
+                <a href="http://localhost:3000/" style={{color:"black", textDecoration:"none"}}>
+                  Home
+
+                </a>
               </div>
             </Col>
             <Col>
               <div>
                 <FontAwesomeIcon icon={faCheckCircle} style={{marginRight: '6px'}}/>
-                Purcharsed
+                <a href="http://localhost:3000/purchased" style={{color:"black", textDecoration:"none"}}>
+                  Purcharsed
+                </a>
               </div>
             </Col>
             <Col>
@@ -111,5 +116,4 @@ function Header() {
     </Container>
   )
 }
-
 export default Header;

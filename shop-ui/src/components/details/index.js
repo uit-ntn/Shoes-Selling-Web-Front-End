@@ -30,7 +30,7 @@ const data=[
     color: ["while", "black"]
   },
   {
-    name: "Nike \"Blaze\" mid \'77 vintage sneakers",
+    name: "Nike Blaze mid 77 vintage sneakers",
     price: "100$",
     img:
     [
@@ -47,7 +47,7 @@ const data=[
 function Details(){
   const abc = data.map((item)=>{return item.img})
   return (
-    <Container style={{borderTop:"3px solid #a3eaf6 ", marginTop: "10px", paddingTop: "60px", minHeight: '1200px'}}>
+    <Container style={{borderTop:"3px solid #a3eaf6 ", marginTop: "10px", paddingTop: "60px", minHeight: '600px'}}>
       <Row>
         <Col>
           <ImgProduct img={abc}/>
@@ -63,5 +63,4 @@ function Details(){
   )
 
 }
-
 export default Details;

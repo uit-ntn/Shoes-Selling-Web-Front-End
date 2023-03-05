@@ -1,9 +1,17 @@
 // api/productApi.js
-class ProductApi {
-getAll = (params) => {
-const url = '/products';
-return axiosClient.get(url, { params });
-};
+import axiosClient from "./axiosClient"
+const  productApi =  {
+  getAll(params){
+    const url= '/v1/products'
+    return axiosClient.get(url, {params})
+  },
+  get(id){
+    const url = `/v1/products/${id}`
+    return axiosClient.get(url)
+  },
+  // add(data){
+  //   const   
+  // }
+
 }
-const productApi = new ProductApi();
 export default productApi;
